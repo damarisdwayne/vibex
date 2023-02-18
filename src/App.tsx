@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { Header } from './components'
+import Navigation from './routes'
+import GlobalStyles from './styles/globalStyles'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <h1>hello vibex</h1>
-    </div>
+    <>
+      <Header />
+      <Navigation />
+      <GlobalStyles />
+    </>
   )
 }
 
