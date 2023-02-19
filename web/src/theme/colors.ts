@@ -23,8 +23,8 @@ export const buttons: Palette['buttons'] = {
     contained: {
       default: {
         color: grayScale[50],
-        background: primary.main,
-        border: primary.main,
+        background: primary.dark,
+        border: primary.dark,
       },
       hover: {
         color: grayScale[50],

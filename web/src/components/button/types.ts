@@ -6,7 +6,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: keyof ButtonVariantProps
   color?: keyof Palette['buttons']
   onClick?: (params?: any) => void
-  type?: 'button' | 'submit' | 'reset'
   fullWidth?: boolean
   isSmall?: boolean
   isLoading?: boolean

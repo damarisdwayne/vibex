@@ -1,5 +1,4 @@
-import React from 'react'
-import { Button } from '../button'
+import { Button } from '..'
 import Logo from '../../assets/logo.png'
 
 import { StyledHeader, StyledHeaderWrapper } from './styles'
