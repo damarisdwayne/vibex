@@ -2,16 +2,22 @@ import { Request, Response } from "express";
 import Product from "../models/product";
 
 class ProductController {
-  public async getProducts(req: Request, res: Response): Promise<Response> {
+  public getProducts = async (
+    req: Request,
+    res: Response
+  ): Promise<Response> => {
     try {
       const products = await Product.findAll();
       return res.json(products);
     } catch (error) {
       return res.status(500).json({ error: "Internal server error" });
     }
-  }
+  };
 
-  public async createProduct(req: Request, res: Response): Promise<Response> {
+  public createProduct = async (
+    req: Request,
+    res: Response
+  ): Promise<Response> => {
     try {
       const { description, image, price } = req.body;
       const product = await Product.create({
@@ -23,9 +29,12 @@ class ProductController {
     } catch (error) {
       return res.status(500).json({ error: "Internal server error" });
     }
-  }
+  };
 
-  public async updateProduct(req: Request, res: Response): Promise<Response> {
+  public updateProduct = async (
+    req: Request,
+    res: Response
+  ): Promise<Response> => {
     try {
       const { id } = req.params;
       const { description, image, price } = req.body;
@@ -47,9 +56,12 @@ class ProductController {
     } catch (error) {
       return res.status(500).json({ error: "Internal server error" });
     }
-  }
+  };
 
-  public async deleteProduct(req: Request, res: Response): Promise<Response> {
+  public deleteProduct = async (
+    req: Request,
+    res: Response
+  ): Promise<Response> => {
     try {
       const { id } = req.params;
       const rowsDeleted = await Product.destroy({
@@ -62,7 +74,7 @@ class ProductController {
     } catch (error) {
       return res.status(500).json({ error: "Internal server error" });
     }
-  }
+  };
 }
 
 export default new ProductController();
