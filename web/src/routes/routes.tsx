@@ -1,16 +1,16 @@
-import { Home, Cart } from '../pages'
+import { Home, Cart, ProductManagment } from '../pages'
 
 export type DefaultRoutesProps = {
   path: string
   element: any
   exact?: boolean
   routes?: DefaultRoutesProps[]
-  meta?: any
 }
 
 export enum Routes {
   HOME = '/',
-  Cart = '/cart',
+  CART = '/cart',
+  PRODUCT_MANAGMENT = '/product-managment',
 }
 
 export const defaultRoutes: DefaultRoutesProps[] = [
@@ -18,18 +18,15 @@ export const defaultRoutes: DefaultRoutesProps[] = [
     path: Routes.HOME,
     element: <Home />,
     exact: true,
-    meta: {
-      title: 'Home',
-      requiresAuth: false,
-    },
   },
   {
-    path: Routes.Cart,
+    path: Routes.CART,
     element: <Cart />,
     exact: true,
-    meta: {
-      title: 'Carrinho',
-      requiresAuth: false,
-    },
+  },
+  {
+    path: Routes.PRODUCT_MANAGMENT,
+    element: <ProductManagment />,
+    exact: true,
   },
 ]

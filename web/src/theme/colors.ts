@@ -13,7 +13,7 @@ export const secondary: Palette['secondary'] = {
 
 export const grayScale: Palette['grayScale'] = {
   50: '#FFFFFF',
-  500: '#9B9285',
+  500: '#7f858D',
   800: '#1C1E1F',
   900: '#1A1C1D',
 }
@@ -34,12 +34,12 @@ export const buttons: Palette['buttons'] = {
     },
     outlined: {
       default: {
-        color: grayScale[50],
+        color: primary.dark,
         background: 'transparent',
         border: primary.main,
       },
       hover: {
-        color: grayScale[50],
+        color: primary.dark,
         background: 'transparent',
         border: secondary.main,
       },

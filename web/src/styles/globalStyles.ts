@@ -24,6 +24,11 @@ export default createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
   }
+
+  button {
+    cursor: pointer;
+  }
+
   a:disabled, button:disabled {
     cursor: not-allowed;
   }

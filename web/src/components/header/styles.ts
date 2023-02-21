@@ -19,3 +19,44 @@ export const StyledHeader = styled.div`
     flex-shrink: 0;
   }
 `
+
+export const StyledHeaderButtons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+`
+
+export const StyledCircle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -4px;
+  right: -3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: ${palette.grayScale[50]};
+  color: ${palette.primary.dark};
+`
+
+export const StyledHeaderCartIcon = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 32px;
+  cursor: pointer;
+
+  > svg {
+    transition: fill 0.2s ease-in-out;
+    fill: ${palette.secondary.main};
+  }
+
+  &:hover {
+    > svg {
+      fill: ${palette.primary.main};
+    }
+  }
+`

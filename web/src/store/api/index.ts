@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { CreateProductInput, Product, UpdateProductInput } from '../types'
+import { CreateProductInput, ProductProps, UpdateProductInput } from '../types'
 
 const API_URL = 'http://localhost:3000'
 
@@ -7,26 +7,26 @@ export const productsApi = createApi({
   reducerPath: 'productsApi',
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: builder => ({
-    getProducts: builder.query<Product[], void>({
+    getProducts: builder.query<ProductProps[], void>({
       query: () => '/products',
     }),
-    createProduct: builder.mutation<Product, CreateProductInput>({
+    createProduct: builder.mutation<ProductProps, CreateProductInput>({
       query: product => ({
-        url: '/products',
+        url: '/product',
         method: 'POST',
         body: product,
       }),
     }),
-    updateProduct: builder.mutation<Product, UpdateProductInput>({
+    updateProduct: builder.mutation<ProductProps, UpdateProductInput>({
       query: product => ({
-        url: `/products/${product.id}`,
+        url: `/product/${product.id}`,
         method: 'PUT',
         body: product,
       }),
     }),
     deleteProduct: builder.mutation<void, number>({
       query: productId => ({
-        url: `/products/${productId}`,
+        url: `/product/${productId}`,
         method: 'DELETE',
       }),
     }),

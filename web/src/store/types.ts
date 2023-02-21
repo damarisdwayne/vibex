@@ -1,4 +1,12 @@
-export interface Product {
+export interface ProductProps {
+  id: number
+  description: string
+  image: string
+  price: number
+  quantity: number
+}
+
+export interface ProductResponse {
   id: number
   description: string
   image: string

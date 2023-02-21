@@ -1,25 +1,25 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Product } from '../types'
+import { ProductProps, ProductResponse } from '../types'
 
 interface ProductsState {
-  products: Product[]
+  products: ProductProps[]
 }
 
 const initialState: ProductsState = {
-  products: [],
+  products: [{ id: 1, description: '', image: '', price: 0, quantity: 1 }],
 }
 
 export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setProducts: (state, action: PayloadAction<Product[]>) => {
+    setProducts: (state, action: PayloadAction<ProductResponse[]>) => {
       state.products = action.payload
     },
-    addProduct: (state, action: PayloadAction<Product>) => {
+    addProduct: (state, action: PayloadAction<ProductResponse>) => {
       state.products.push(action.payload)
     },
-    updateProduct: (state, action: PayloadAction<Product>) => {
+    updateProduct: (state, action: PayloadAction<ProductResponse>) => {
       const index = state.products.findIndex(product => product.id === action.payload.id)
       state.products[index] = action.payload
     },

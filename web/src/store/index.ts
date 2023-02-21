@@ -15,7 +15,7 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['userState', 'authState', 'enumeratorState'],
+  whitelist: ['cartState', 'productState'],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
