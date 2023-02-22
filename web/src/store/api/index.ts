@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { CreateProductInput, ProductProps, UpdateProductInput } from '../types'
 
-const API_URL = 'http://localhost:3000'
+const API_URL = process.env.PORT
 
 export const productsApi = createApi({
   reducerPath: 'productsApi',
