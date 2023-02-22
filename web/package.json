@@ -16,7 +16,6 @@
     "@mui/material": "^5.11.9",
     "@reduxjs/toolkit": "^1.9.2",
     "@rtk-incubator/rtk-query": "^0.3.0",
-    "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
