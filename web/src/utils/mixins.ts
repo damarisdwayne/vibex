@@ -11,3 +11,6 @@ export const hexToRgba = (hex: string, alpha: number): string => {
     return `rgb(${r}, ${g}, ${b})`
   }
 }
+
+export const formatNumber = (value: number) =>
+  value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })

@@ -3,15 +3,19 @@ import { palette } from '../../theme'
 import { hexToRgba } from '../../utils'
 
 interface ProductProps {
-  variant: 'vertical' | 'bag'
+  variant: 'vertical' | 'bag' | 'product-managment'
 }
 
 export const StyledImageProductBox = styled.div`
-  width: 100%;
+  width: 190px;
+  height: 190px;
+  flex-shrink: 0;
 `
 
 export const StyledImageProduct = styled.img`
   width: 100%;
+  height: 100%;
+  flex-shrink: 0;
 `
 
 export const StyledPriceProduct = styled.p`
@@ -37,7 +41,6 @@ export const StyledProductButtons = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
   margin-left: auto;
   gap: 32px;
 
@@ -50,13 +53,21 @@ export const StyledProductButtons = styled.div`
   }
 `
 
+export const StyledProductManagmentButtons = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  height: 100%;
+  gap: 16px;
+`
+
 export const StyledProductWrapper = styled.div<ProductProps>`
   ${({ variant }) => {
     return css`
       width: 100%;
-      height: 100%;
+      height: ${variant === 'vertical' ? 'auto' : '150px'};
+      justify-content: space-between;
       padding: 16px;
-      height: auto;
       border: ${variant === 'vertical' ? `1px solid ${palette.primary.dark}` : 0};
       border-radius: 4px;
       transition: all 0.2s ease-in-out;
@@ -87,7 +98,8 @@ export const StyledProductWrapper = styled.div<ProductProps>`
         }
 
         ${StyledImageProductBox} {
-          width: 150px;
+          width: 130px;
+          height: 130px;
         }
       `}
     `

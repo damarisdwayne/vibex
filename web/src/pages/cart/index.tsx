@@ -1,11 +1,17 @@
 import React from 'react'
 import { Bag, Button, Product } from '../../components'
 import { useAppSelector } from '../../store'
+import { formatNumber } from '../../utils'
 
 import { StyledCartWrapper, StyledProducts, StyledBoxRight } from './styles'
 
 const Cart: React.FC = () => {
   const { items } = useAppSelector(state => state.cartState)
+
+  let total = 0
+  items.forEach(item => {
+    total += item.price * item.quantity
+  })
 
   return (
     <StyledCartWrapper>
@@ -20,15 +26,15 @@ const Cart: React.FC = () => {
             <h2>Resumo</h2>
             <div>
               <p>Valor dos produtos:</p>
-              <strong>R$ 1.180,00</strong>
+              <strong>{formatNumber(total)}</strong>
             </div>
             <div>
               <p>Frete</p>
-              <strong>R$ 10</strong>
+              <strong>R$ 10,00</strong>
             </div>
             <div>
               <p>Total</p>
-              <strong>R$ 1.190,00</strong>
+              <strong>{formatNumber(total + 10)}</strong>
             </div>
             <div>
               <Button variant="contained">IR PARA O PAGAMENTO</Button>

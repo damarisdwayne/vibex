@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { palette } from '../../theme'
+import { hexToRgba } from '../../utils'
 
 interface BagProps {
   isOpen?: boolean
@@ -18,6 +19,7 @@ export const StyledBagWrapper = styled.div<BagProps>`
   overflow-x: hidden;
   overflow-y: auto;
   transition: all 0.32s ease-in-out;
+  box-shadow: 0px 18px 60px -30px ${hexToRgba(palette.grayScale[900], 0.18)};
   background-color: white;
   transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(100%)')};
 `
@@ -42,17 +44,17 @@ export const StyledBagProducts = styled.div`
   gap: 8px;
   padding: 0 16px;
   margin-top: 16px;
+  overflow-y: auto;
 `
 
 export const StyledBagFooter = styled.div`
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   padding: 16px;
   gap: 16px;
   box-shadow: 0 -3px 3px rgb(0 0 0 / 10%);
+  margin-top: auto;
 
   p,
   strong {

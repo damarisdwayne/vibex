@@ -13,18 +13,18 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setProducts: (state, action: PayloadAction<ProductResponse[]>) => {
+    setProducts: (state, action: PayloadAction<ProductProps[]>) => {
       state.products = action.payload
     },
-    addProduct: (state, action: PayloadAction<ProductResponse>) => {
+    addProduct: (state, action: PayloadAction<ProductProps>) => {
       state.products.push(action.payload)
     },
-    updateProduct: (state, action: PayloadAction<ProductResponse>) => {
+    updateProduct: (state, action: PayloadAction<ProductProps>) => {
       const index = state.products.findIndex(product => product.id === action.payload.id)
       state.products[index] = action.payload
     },
-    deleteProduct: (state, action: PayloadAction<number>) => {
-      state.products = state.products.filter(product => product.id !== action.payload)
+    deleteProduct: (state, action: PayloadAction<ProductProps>) => {
+      state.products = state.products.filter(product => product.id !== action.payload.id)
     },
   },
 })

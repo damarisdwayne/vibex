@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../store'
 import { handleCartState } from '../../store/slices'
 import { Routes } from '../../routes/routes'
 import { Product } from '..'
+import { formatNumber } from '../../utils'
 import {
   StyledBagWrapper,
   StyledBagHeader,
@@ -23,6 +24,11 @@ const bag: React.FC = () => {
   const handleCloseCart = () => {
     dispatch(handleCartState(false))
   }
+
+  let total = 0
+  items.forEach(item => {
+    total += item.price * item.quantity
+  })
 
   return (
     <StyledBagWrapper isOpen={isOpen}>
@@ -44,16 +50,16 @@ const bag: React.FC = () => {
           </StyledBagProducts>
           <StyledBagFooter>
             <div>
-              <p>Subtotal (2 produtos)</p>
-              <p>R$ 1.180,00</p>
+              <p>Subtotal ({items.length} produtos)</p>
+              <p>{formatNumber(total)}</p>
             </div>
             <div>
               <p>Frete</p>
-              <p>R$ 10</p>
+              <p>R$ 10,00</p>
             </div>
             <div>
               <strong>Total</strong>
-              <strong>R$ 1.190,00</strong>
+              <strong>{formatNumber(total + 10)}</strong>
             </div>
             <Button
               variant="contained"

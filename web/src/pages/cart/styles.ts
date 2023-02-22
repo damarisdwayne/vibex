@@ -6,6 +6,7 @@ export const StyledCartWrapper = styled.div`
   padding: 16px;
   display: flex;
   gap: 16px;
+  height: 100vh;
 
   > h2 {
     margin: auto;
@@ -23,6 +24,7 @@ export const StyledBoxRight = styled.div`
   background-color: white;
   border-radius: 4px;
   padding: 16px;
+  height: 300px;
 
   > h2 {
     color: ${palette.primary.dark};
