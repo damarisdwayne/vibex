@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { CreateProductInput, ProductProps, UpdateProductInput } from '../types'
 
-const API_URL = process.env.PORT
+const API_URL = 'https://vibex-back-production.up.railway.app'
 
 export const productsApi = createApi({
   reducerPath: 'productsApi',
