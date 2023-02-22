@@ -70,6 +70,8 @@ const product: React.FC<ProductsProps> = ({ variant = 'vertical', product }) => 
     }
   }
 
+  let price = parseFloat(product.price.toString())
+
   return (
     <StyledProductWrapper variant={variant}>
       <StyledImageProductBox>
@@ -77,7 +79,7 @@ const product: React.FC<ProductsProps> = ({ variant = 'vertical', product }) => 
       </StyledImageProductBox>
       <StyledContentProduct>
         <StyledDescriptionProduct>{product.description}</StyledDescriptionProduct>
-        <StyledPriceProduct>R$ {formatNumber(product.price)}</StyledPriceProduct>
+        <StyledPriceProduct>{formatNumber(price)}</StyledPriceProduct>
       </StyledContentProduct>
       <Buttons />
       <ModalDeleteProduct

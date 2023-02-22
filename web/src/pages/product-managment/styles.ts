@@ -4,7 +4,8 @@ export const StyledProductManagmentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 16px;
-  height: calc(100vh - 20px);
+  height: calc(100vh - 70px);
+  overflow-y: auto;
   > div {
     display: flex;
     flex-direction: column;
